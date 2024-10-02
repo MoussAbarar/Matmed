@@ -1,0 +1,531 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* ------------------ navbar -------------------- */
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 60px;
+    border-bottom: #f1f1f1 solid 1px;
+    position: sticky;
+    top: 0;
+    z-index: 1111;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.hide_navbar{
+    transform: translateY(-110px);
+}
+
+.items{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.items a{
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    color: #181818;
+    text-transform: capitalize;
+}
+
+.items a:hover{
+    color: #4B57AB;
+}
+
+.items a::after{
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0%;
+    width: 0%;
+    height: 2px;
+    background-color: #4B57AB;
+    transition: 0.2s linear;
+}
+
+.items a:hover::after{
+    width: 100%;
+}
+
+.logo img{
+    width: 100px;
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.icon i{
+    font-size: 32px;
+    cursor: pointer;
+    color: #4B57AB;
+}
+
+.bx-menu, .fa-regular{
+    display: none;
+}
+
+/* ---------------------- responsive navbar -----------------------*/
+
+@media only screen and (max-width: 1300px){
+
+    .navbar{
+        padding: 0px 20px;
+    }
+
+    .items{
+        flex-direction: column;
+        position: absolute;
+        right: 0%;
+        padding: 20px 0;
+        width: 100%;
+        background-color: #fff;
+        text-align: center;
+        transition: 0.5s ease-in-out;
+        display: none;
+    }
+
+    .show{
+        display: flex;
+        top: 100%;
+    }
+
+    .bx-menu{
+        display: block;
+    }    
+    
+    .show_menu{
+        display: block;
+    }
+
+    .hide_menu{
+        display: none;
+    }
+}
+
+/* --------------------- Accueil -------------------*/
+
+.accueil{
+    display: flex;
+    padding: 70px 60px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accueil .desc{
+    width: 40%;
+}
+
+.accueil .desc .title{
+    color: #4B57AB;
+    text-transform: capitalize;
+}
+
+.accueil .desc h1{
+    font-size: 45px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+
+.accueil .desc .description{
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+.accueil .desc span{
+    padding-left: 10px;
+    border-left: solid #4B57AB 5px;
+}
+
+.accueil .desc a, .apres_temoi a{
+    color: #fff;
+    background-color: #4B57AB;
+    padding: 8px 26px;
+    border: #4B57AB solid 1px;
+    border-radius: 10px;
+    text-decoration: none;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-size: 20px;
+    transition: 0.4s ease-in-out;
+}
+
+.accueil .desc a:hover, .apres_temoi a:hover{
+    background-color: transparent;
+    color: #4B57AB;
+    box-shadow: 0px 8px 15px rgba(75, 87, 171, 0.3);
+}
+
+.accueil .caroussel{
+    width: 50%;
+}
+
+.accueil .caroussel img{
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+}
+
+/* -------------------- responsive accueil ----------------------*/
+
+@media only screen and (max-width: 1100px){
+    .accueil{
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 20px;
+        padding: 0 60px 60px 60px;
+    }
+
+    .accueil .caroussel{
+        width: 95%;
+    }
+
+    .accueil .desc{
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .accueil .desc .description{
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .accueil .desc h1{
+        font-size: 36px;
+    }
+
+    .accueil .desc p{
+        width: 80%;
+    }
+
+    .accueil{
+        padding: 0 10px 60px 10px;
+    }
+
+    .accueil .caroussel{
+        width: 100%;
+    }
+
+}
+
+/*-------------- avantages ------------------*/
+
+.avantages{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avantages h1, .temoignage h1{
+    font-size: 45px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: relative;
+    text-transform: capitalize;
+    padding-bottom: 10px;
+    width: 100%;
+}
+.avantages .desc p, .temoignage .desc p{
+    text-transform: capitalize;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    position: relative;
+    padding-left: 10px;
+}
+
+.avantages .desc p::before, .temoignage .desc p::before{
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 5px;
+    height: 100%;
+    background-color: #4B57AB;
+}
+
+.avantages .desc, .temoignage .desc{
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.avantage{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px;
+    width: 100%;
+}
+
+.avantage div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.08);
+    padding: 30px 50px;
+    border-radius: 30px;
+    width: 350px;
+    height: 450px;
+    transition: 0.5s ease;
+}
+
+.avantage div:hover {
+    transform: translateY(-10px);
+    background-color: #fafafa;
+}
+
+
+.avantage div i{
+    color: #4B57AB;
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.avantage div h3{
+    text-transform: capitalize;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.avantage div p{
+    font-size: 16px;
+    font-weight: 400;
+    color: #343C77;
+}
+
+/*------------------ responsive avantage ----------------*/
+
+@media only screen and (max-width: 1200px){
+    .avantage{
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .avantages h1{
+        font-size: 36px;
+    }
+
+    .avantage p{
+        width: 100%;
+    }
+
+    body{
+        overflow-x: hidden;
+    }
+
+    .avantages .desc p::before, .temoignage .desc p::before{
+        content: "";
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 0px;
+        height: 0%;
+        background-color: transparent;
+    }
+}
+
+/* ----------------- temoignage ----------------*/
+
+.temoignage .slider{
+    width: 60%;
+    margin: 30px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.08);
+    border-radius: 20px 90px 10px 10px;
+}
+
+.temoignage .carousel-item{
+    padding: 40px 60px;
+    border-radius: 20px 90px 10px 10px;
+    text-align: center;
+}
+
+.temoignage .carousel-item img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.temoignage .carousel-control-prev-icon, .temoignage .carousel-control-next-icon{
+    background-color: grey;
+    border-radius: 50%;
+}
+
+.temoignage .carousel-item p{
+    color: #343C77;
+    letter-spacing: 1px;    
+    font-weight: 600;
+
+}
+
+.temoignage .carousel-item .bn{
+
+    font-style: italic;
+}
+
+.apres_temoi{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 60px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.apres_temoi p{
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+}
+
+/* ----------------- responsive temoignage ------------------- */
+
+@media only screen and (max-width: 500px){
+    .temoignage h1{
+        font-size: 36px;
+    }
+
+    .temoignage p{
+        width: 100%;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .apres_temoi{
+        width: 100%;
+    }
+
+    .temoignage .slider{
+        width: 80%;
+    }
+
+    .temoignage .carousel-item{
+        padding: 40px 0;
+    }
+
+    .apres_temoi p{
+        width: 100%;
+    }
+}
+
+/* ----------------- footer -----------------*/
+
+.footer .designed_by{
+    padding: 10px 0;
+    background-color: #4B57AB;
+    color: #fff;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 0;
+    letter-spacing: 1px;
+
+}
+
+.footer .designed_by a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer .designed_by a:hover{
+    color: #f1f1f1;
+}
+
+.footer .helpful{
+    display: flex;
+    justify-content: space-between;
+    padding: 60px;
+    background-color: #f1f1f1;
+    margin-top: 50px;
+}
+
+.footer .helpful h4{
+    color: #4B57AB;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.footer .helpful li{
+    margin-bottom: 12px;
+}
+
+.footer .helpful .links a{
+    color: #181818;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.footer .helpful a:hover, .footer .helpful .s_media i:hover{
+    color: #4B57AB;
+}
+
+.footer .helpful .s_media i{
+    color: #181818;
+    font-size: 22px;
+    margin-right: 8px;
+    margin-top: 10px;
+}
+
+.up{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background-color: #4B57AB;
+    opacity: 0.5;
+    bottom: 40px;
+    right: 10px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.up:hover{
+    opacity: 1;
+}
+
+/* ----------------- Responsive footer -----------------*/
+
+@media only screen and (max-width: 900px){
+    .footer .helpful{
+        flex-direction: column;
+        gap: 20px;
+    }
+}
